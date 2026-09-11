@@ -132,6 +132,9 @@ A: No — the runtime fallback covers new strings immediately, including third-p
 **Q: DSH won't start after removing the plugin?**
 A: Always remove via `dsh plugin --profile web remove dsh-multi-lang-ui` (it cleans up the profile's bundle list). Manually deleting the package can leave dangling references that break startup.
 
+**Q: After a DSH update the plugin's languages disappeared, or the page says "authentication required"?**
+A: DSH 0.1.1+ added browser authentication — open the tokenized URL printed by `dsh web` in your terminal (e.g. `http://127.0.0.1:3080/?token=…`); without it the server answers 401. If the languages still don't appear, update the plugin (`dsh plugin --profile web remove dsh-multi-lang-ui`, then add it again) — plugin 0.1.1+ declares `inject: ["locale"]` and no longer depends on plugin load order.
+
 ## License
 
 MIT

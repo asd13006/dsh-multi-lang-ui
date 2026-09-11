@@ -134,6 +134,9 @@ A：無需等待插件更新——運行時兜底會即時覆蓋任何新字串�
 **Q：移除插件後 DSH 無法啟動？**
 A：請務必使用 `dsh plugin --profile web remove dsh-multi-lang-ui` 移除（會同步清理 profile 的 bundle 清單）。手動刪除套件可能留下殘留引用令 DSH 啟動失敗。
 
+**Q：DSH 更新後語言選項消失了，或者頁面顯示「authentication required」？**
+A：DSH 0.1.1+ 加咗瀏覽器認證——請用終端 `dsh web` 印出嘅帶 token URL 開啟（例如 `http://127.0.0.1:3080/?token=…`），冇 token 會回 401。若語言仍然冇出現，請更新插件（先 `dsh plugin --profile web remove dsh-multi-lang-ui`，再重新 add）——插件 0.1.1+ 已宣告 `inject: ["locale"]`，唔再依賴插件載入次序。
+
 ## License
 
 MIT

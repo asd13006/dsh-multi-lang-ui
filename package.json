@@ -1,7 +1,7 @@
 {
   "name": "dsh-multi-lang-ui",
   "description": "DSH Web UI 多語言插件：新增繁體中文/日本語/한국어/Français/Deutsch/Español 語言選項，官方介面字串逐條精譯，英文內容保持英文",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "./index.mjs",
   "types": "./index.d.ts",
@@ -67,3 +67,4 @@
   ],
   "license": "MIT"
 }
+
