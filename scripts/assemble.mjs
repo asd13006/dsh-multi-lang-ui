@@ -61,8 +61,8 @@ const clientJs = `/* global window */
 //     的 settings 通道对 remote browser 也不持久，且 apiproxy 的 settings 白名单
 //     不向插件开放自定义 namespace），刷新后保持语言选择。
 //
-// 依赖注入：@deepseek-ai/dsh-client-locale（locale 服务）；locale 服务缺失时
-// 静默降级（不注册字典、不改语言行），不破坏其他插件。
+// 依赖注入：声明 inject: ["locale"]，由 cordis 等待 locale 服务提供后再 apply
+// （不依赖插件加载顺序——DSH 更新曾改变加载顺序，导致抢跑时服务未就绪而静默降级）。
 window.__ModuleLoader__.load({
   id: "dsh-multi-lang-ui",
   factory: (require) => {
@@ -82,7 +82,7 @@ window.__ModuleLoader__.load({
     const CHARS = ${CHARS_JSON};
 
     const name = "multi-lang-ui";
-    const inject = [];
+    const inject = ["locale"];
 
     // 纯单字简→繁转换（不做術語片語；{佔位符} 内无汉字，天然安全）。
     // fast-path：先扫一遍有没有需要转换的字，没有就直接返回原串（避免热路径分配）。
