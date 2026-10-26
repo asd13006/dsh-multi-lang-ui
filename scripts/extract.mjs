@@ -33,6 +33,8 @@ const PKGS = [
   "dsh-client-ui-theme",
   "dsh-client-ui-user-questions",
   "dsh-client-ui-trajectory",
+  "dsh-client-ui-chat",
+  "dsh-client-ui-schedule",
   "dsh-client-ui-settings-plugins",
   "dsh-client-ui-settings-plugin-inventory",
   "dsh-client-ui-workspace",
