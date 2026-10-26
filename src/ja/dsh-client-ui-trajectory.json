@@ -4,8 +4,8 @@
     {
       "ns": "trajectory",
       "dict": {
-        "view.trajectory": "軌跡",
-        "toolbar.aria": "軌跡ツールバー",
+        "view.trajectory": "実行履歴",
+        "toolbar.aria": "実行履歴ツールバー",
         "toolbar.duration": "所要時間",
         "toolbar.useActualDuration": "実際の所要時間を使用",
         "toolbar.useEqualWidth": "操作を等幅で表示",
@@ -16,7 +16,7 @@
         "toolbar.calls": "呼び出し",
         "toolbar.expandCalls": "呼び出しを展開",
         "toolbar.collapseCalls": "呼び出しを折りたたむ",
-        "toolbar.search": "軌跡を検索",
+        "toolbar.search": "実行履歴を検索",
         "toolbar.searchPlaceholder": "検索"
       }
     }
